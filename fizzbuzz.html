@@ -1,6 +1,6 @@
 <script>
 let number = 0;
-for (number <= 100); number= number + 1; {
+while (number <= 100); number= number + 1; {
   console.log (number);
   }
 if (number % 3 == 0) {
@@ -14,3 +14,15 @@ else if (number % 3 && 5 == 0) {
   }
 
 </script>
+
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0) {
+  console.log("fizz");
+ } else if (i % 5 === 0){
+ console.log("buzz");
+ } if(i % 3 && 5 == 0){
+ console.log("fizzbuzz");
+ }else{
+  console.log(i);
+}
+}
