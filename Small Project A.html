@@ -2,6 +2,7 @@
 let playing= true;
 let a = 1;
 let b = 100;
+
  let middle = Math.floor((a+b)/2);
 while (playing = true) {
   let z=(prompt("Is your answer " + middle + "?"));
@@ -12,7 +13,7 @@ while (playing = true) {
   else if (z=="<"){
  
    middle = Math.floor((a-b)/2);
-   a= middle - 1;
+   b= middle - 1;
   }
   else if (z=="yes"){
   playing = false;
