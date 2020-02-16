@@ -1,15 +1,12 @@
-  
 <script>
 let playing= true;
 let a = 1;
 let b = 100;
-let z=(prompt("Is your answer " + middle + "?"));
 
 while (playing = true) {
   let middle = Math.floor((a+b)/2);
- 
+  let z=(prompt("Is your answer " + middle + "?"));
   if (z==">") {
-    middle = Math.floor((a+b)/2);
     a= middle + 1;
   }
   else if (z=="<"){
@@ -21,7 +18,7 @@ while (playing = true) {
   (alert("I won!"));
   break;
   }
-  }
+  
 }
   
 </script>
