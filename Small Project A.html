@@ -1,19 +1,23 @@
 <script>
 let playing= true;
-let a = 1;
-let b = 100;
+let max = 1;
+let min = 100;
+let x = 1
+let y=100
 
- let middle = Math.floor((a+b)/2);
+ let middle = Math.floor((max+min)/2);
 while (playing = true) {
   let z=(prompt("Is your answer " + middle + "?"));
   if (z==">") {
- middle = Math.floor((a+b)/2)
-  a= middle + 1;
+ middle = Math.floor((x+y)/2)
+  x= middle + 1;
+  y= Number(100)
   }
   else if (z=="<"){
  
-   middle = Math.floor((a-b)/2);
-   b= middle - 1;
+   middle = Math.floor((x-y)/2);
+   y= middle - 1;
+   x= 50
   }
   else if (z=="yes"){
   playing = false;
