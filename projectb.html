@@ -5,11 +5,7 @@ let newStr=""
 if (shift>26){
 	shift= shift%26;
 }
-if (shift<0) {
-	if (shift>= -25){
-	shift=shift+26; 
-  }
-}
+
 for (let i = 0; i<str.length; i++){
   var letterCode = str.charCodeAt(i)+shift;
   if(letterCode<65){
@@ -30,4 +26,3 @@ for (let i = 0; i<str.length; i++){
 }
 alert(newStr);
 </script>
-
