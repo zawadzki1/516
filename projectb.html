@@ -10,16 +10,16 @@ if (shift<0)
 }
 for (let i = 0; i<str.length; i++){
   var letterCode = str.charCodeAt(i)+shift;
-  if(letterCode<65){
+  if(letterCode<=65){
   letterCode=letterCode+26;
   }
-  if(letterCode>=90){
+  if(letterCode=>90){
   letterCode=letterCode-26;
   }
-  if(letterCode=<97){
+  if(letterCode<=97){
   letterCode=letterCode+26;
   }
-  if(letterCode>=122){
+  if(letterCode=>122){
   letterCode=letterCode-26;
   }
   
