@@ -11,13 +11,7 @@ if (shift<0) {
   }
 }
 for (let i = 0; i<str.length; i++){
-  
-// if NOT in 65-90 or 97-122, then immediately add onto newStr and then continue
-// do bunch of if statments
-
-// if 65-90 OR 97-122
-// else, just add character directly onto newStr
-
+  if !(str.charCodeAt(i)<= 65 && str.charCodeAt(i)=>90) || !(str.charCodeAt(i)<=97 && str.charCodeAt(i)=>122) {
   let letterCode = str.charCodeAt(i)+shift;
   if (letterCode<65) {
     letterCode=letterCode+26;
