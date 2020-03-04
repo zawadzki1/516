@@ -1,14 +1,18 @@
 <script>
+let translation="";
 let dict= {
   "Bonjour" : "Hello",
   "Au revoir" : "Goodbye",
   "Ca va" : "How are you",
   }; 
-  let a= prompt("Enter a word")
-  if (dict.includes(a)){
-  alert(dict[a])
+  while (translation){
+  let word = prompt("Enter a word");
+  if (word in dict){
+  alert(dict[word]);
+  } else {
+  translation = prompt("please give trnaslation")
+  dict[word] = translation;
   }
-  else {let b= prompt ("Please provide a translation for this word"); 
-  dict.a = b;
   }
+    
 </script>  

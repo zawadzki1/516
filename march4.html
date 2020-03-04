@@ -1,0 +1,17 @@
+<script>
+let directory = [{fName:"Evgeny", Age:34},{fName:"Brody", Age:24}, {fName:"Zoe", Age: 25}, {fName:"April", Age: 21}];
+let search=(prompt("Enter your search"));
+for(let k of directory){
+  let found=false;
+  for(let n in k){
+  if(k[n]==search){
+  found=true;
+  break;
+  }
+}
+  if(found){
+  alert(k.fName+" "+k.Age)
+  }
+}
+
+</script>
