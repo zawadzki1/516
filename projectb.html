@@ -1,7 +1,9 @@
 <script>
+let cap=""
 let shift= Number(prompt("Enter shift"));
 let str= prompt("Enter text"); 
 let newStr=""
+let newLetter=""
 if (shift>26){
 	shift= shift%26;
 }
@@ -11,30 +13,36 @@ if (shift<0) {
   }
 }
 for (let i = 0; i<str.length; i++){
+let other=str.charCodeAt(i);
 let letterCode = str.charCodeAt(i)+shift;
+
   
 // if NOT in 65-90 or 97-122, then immediately add onto newStr and then continue
 // do bunch of if statments
 
 // if 65-90 OR 97-122
 // else, just add character directly onto newStr
-
+  if ((other>=65 && other<=90) || (other>=97 && other<=122)) {
   
-  if (letterCode<65) {
-    letterCode=letterCode+26;
+  if (letterCode<=90){
+  cap= "YES";
   }
-  if  (letterCode>90) {
-    letterCode=letterCode-26;
+  else {
+  cap = "NO";
   }
-  if(letterCode<97) {
-    letterCode=letterCode+26;
+  
+  if(letterCode>90&&cap=="YES"||letterCode>122&&cap=="NO"){
+  letterCode=letterCode-26;
   }
-  if (letterCode>122) {
-    letterCode=letterCode-26;
+  if(letterCode <65 && cap=="YES" || letterCode <97 && cap=="NO") {
+   letterCode = letterCode + 26;
   }
-    let newLetter = String.fromCharCode (letterCode);
-    newStr=newStr+newLetter;
+  newLetter = String.fromCharCode(letterCode);
+  }
+  else{ 
+  newLetter= String.fromCharCode(other); 
+  }  
+newStr=newStr+newLetter;
 	}
-  }
 alert(newStr);
 </script>
