@@ -4,7 +4,7 @@ let shift= Number(prompt("Enter shift"));
 let str= prompt("Enter text"); 
 let newStr=""
 let newLetter=""
-if (shift>26){
+if (shift>=26){
   shift= shift%26;
 }
 if (shift<0) {
@@ -25,7 +25,7 @@ let letterCode = str.charCodeAt(i)+shift;
   if(letterCode>90&&cap=="YES"||letterCode>122&&cap=="NO"){
   letterCode=letterCode-26;
   }
-  if(letterCode <65 && cap=="YES" || letterCode <97 && cap=="NO") {
+  if(letterCode<65&&cap=="YES"||letterCode<97&&cap=="NO") {
    letterCode = letterCode + 26;
   }
   newLetter = String.fromCharCode(letterCode);
