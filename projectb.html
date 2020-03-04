@@ -31,12 +31,13 @@ for (let i = 0; i<str.length; i++){
   if (letterCode>122) {
     letterCode=letterCode-26;
   }
-  else {
-    continue
-	}
-  let newLetter = String.fromCharCode (letterCode);
+    let newLetter = String.fromCharCode (letterCode);
     newStr=newStr+newLetter;
-  }
+	}
+  else {
+    continue;
+	newStr=newStr+lettercode
+	}
   }
 alert(newStr);
 </script>
