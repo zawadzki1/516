@@ -1,8 +1,25 @@
 <script>
-const prep= {"at":["I am at school.","Where are you at?"],
-  "with":["I am cleaning with a broom.","I am with your sister."], 
-  "on":["The cat is on the couch.","She is sitting on the chair."], 
-  "in": ["The whisk is in the drawer.","The mail is in the mailbox."]
-}  
-  console.log(prep.at[])
+let score= {"at":[0], "with":[0], "on":[0], "in":[0]}
+const prep= {preposition:"at":[
+  "I am at school.",
+  "Where are you at?",
+  "At what time are we meeting?",
+  "Look at me!"
+],
+  preposition:"with":[
+  "I am cleaning ___ a broom.",
+  "I am ___ your sister."
+], 
+  preposition:"on":[
+  "The cat is ___ the couch.",
+  "She is sitting ___ the chair.",
+  "Let's move ___ to the next problem"
+], 
+  preposition"in": ["The whisk is in the drawer.",
+  "The mail is in the mailbox.",
+  "I am disappointed in you."
+]
+}
+string.replace("preposition","_____")
+  console.log(prep.at[Math.floor((Math.Random()*25)+1)])
 </script>
