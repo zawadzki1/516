@@ -1,25 +1,37 @@
 <script>
-let score= {"at":[0], "with":[0], "on":[0], "in":[0]}
-const prep= {preposition:"at":[
+let score= {"at":1, "with":2, "on":-3, "in":4}
+let worst="at";
+for (let k in score){
+if (score[k]<score[worst]){
+worst=k;
+}
+}
+const prep= {"at":[
   "I am at school.",
   "Where are you at?",
   "At what time are we meeting?",
   "Look at me!"
 ],
-  preposition:"with":[
+ "with":[
   "I am cleaning ___ a broom.",
   "I am ___ your sister."
 ], 
-  preposition:"on":[
+  "on":[
   "The cat is ___ the couch.",
   "She is sitting ___ the chair.",
   "Let's move ___ to the next problem"
 ], 
-  preposition"in": ["The whisk is in the drawer.",
+  "in": ["The whisk is in the drawer.",
   "The mail is in the mailbox.",
   "I am disappointed in you."
 ]
 }
-string.replace("preposition","_____")
-  console.log(prep.at[Math.floor((Math.Random()*25)+1)])
+let sentence=""
+for (let x in prep){
+  if (worst=x){
+  sentence=x
+  }  
+  }
+alert(sentence)
+
 </script>
