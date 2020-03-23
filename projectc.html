@@ -1,5 +1,5 @@
 <script>
-let score= {"at":1, "with":2, "on":-3, "in":4}
+let score= {"at":1, "with":-2, "on":3, "in":4}
 let worst="at";
 for (let k in score){
 if (score[k]<score[worst]){
@@ -10,21 +10,42 @@ const prep= {"at":[
   "I am at school.",
   "Where are you at?",
   "At what time are we meeting?",
-  "Look at me!"
+  "Look at me!",
+  "It is located at the corner of first and fifth street"
+  
 ],
  "with":[
-  "I am cleaning ___ a broom.",
-  "I am ___ your sister."
+  "I am cleaning with a broom.",
+  "I am with your sister.",
+  "Who are you going with?",
+  "What do you like with your coffee?",
+  "I like fries with my burger."  
+  
 ], 
   "on":[
-  "The cat is ___ the couch.",
-  "She is sitting ___ the chair.",
-  "Let's move ___ to the next problem"
+  "The cat is on the couch.",
+  "She is sitting on the chair.",
+  "Let's move on to the next problem.",
+  "The book is on my desk.",
+  "I put the flowers on the counter."
+  "
 ], 
-  "in": ["The whisk is in the drawer.",
+  "in": [
+  "The whisk is in the drawer.",
   "The mail is in the mailbox.",
-  "I am disappointed in you."
-]
+  "I am disappointed in you.",
+  "I am in my car",
+  "She is in her office" 
+  
+],
+  "over":[
+  "The plane flew over New York.",
+  "The ball went over his hands.",
+  "The question went over my head.",
+  "The shelf is over the desk",
+  "She put the sweatshirt over her tshirt."
+  ]
+  
 }
 let sentence=""
 for (let x in prep){
