@@ -1,5 +1,5 @@
 <script>
-let score= {"at":1, "with":-2, "on":3, "in":4}
+let score= {"at":1, "with":-2, "on":3, "in":4, "over":0}
 let worst="at";
 for (let k in score){
 if (score[k]<score[worst]){
@@ -28,7 +28,7 @@ const prep= {"at":[
   "Let's move on to the next problem.",
   "The book is on my desk.",
   "I put the flowers on the counter."
-  "
+ 
 ], 
   "in": [
   "The whisk is in the drawer.",
@@ -45,14 +45,14 @@ const prep= {"at":[
   "The shelf is over the desk",
   "She put the sweatshirt over her tshirt."
   ]
-  
+
 }
 let sentence=""
 for (let x in prep){
   if (worst=x){
-  sentence=x
+ alert(x[Math.floor(Math.random() * 6]);
   }  
   }
-alert(sentence)
+
 
 </script>
