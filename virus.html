@@ -24,6 +24,36 @@
 <body>
 
 <script>
+
+const worldSize = 200, nPeople = 100;
+
+let people = [];
+
+function createWorld(){
+  for (let i=0; i < nPeople; i++){
+    let person = {
+	  x: Math.random() * worldSize,
+	  y: Math.random() * worldSize
+	};
+	person.el = document.createElement("div");
+	person.el.classname = "dot";
+	document.body.appendChild(person.el);
+	people.push(person)
+  }
+}
+function drawWorld() {
+   for(let person of people){
+     person.el.style.left = parseInt(person.x) + "px";
+	 person.el.style.top = parseInt(person.x) + "px";
+  }
+}
+
+createWorld();
+drawWorld();
+
+
+
+
 </script>
 
 </body>
