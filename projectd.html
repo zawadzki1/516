@@ -1,6 +1,6 @@
 <script>
 let myString = prompt("Enter a sentence");
 let replacedString= myString.replace(/([aeiouy]+)/gi, "aig$1");
-let replacedString2= replacedString.replace(/([aeiouy][bcdfghjklmnpqrstvwxz]+)(aige)\b/gi, "$1e");
+let replacedString2= replacedString.replace(/([aeiouy][bcdfghjklmnpqrstvwxz]+)(aig)(e)\b/gi, "$1$3");
 alert(replacedString2);
 </script> 
