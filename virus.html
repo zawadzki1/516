@@ -25,33 +25,97 @@
 
 <script>
 
-const worldSize = 200, nPeople = 100;
+const worldSize = 500, nPeople = 100, maxSpeed = 2, recoveryTime = 50, infectionRadius = 10;
 
 let people = [];
+let tick = 0;
 
 function createWorld(){
-  for (let i=0; i < nPeople; i++){
+  for (let i = 0; i < nPeople; i++){
     let person = {
 	  x: Math.random() * worldSize,
-	  y: Math.random() * worldSize
+	  y: Math.random() * worldSize,
+	  speedX: maxSpeed *2 * (Math.random() - 0.5),
+	  speedY: maxSpeed *2 * (Math.random() - 0.5),
+	  exposedAt: 0
 	};
+	if (i < nPeople *.75) {
+	  person.speedX = 0;
+	  person.speedY = 0;
+	}
 	person.el = document.createElement("div");
-	person.el.classname = "dot";
+	person.el.className = "dot";
 	document.body.appendChild(person.el);
-	people.push(person)
+	people.push(person);
   }
 }
+
 function drawWorld() {
+  let activeCases = 0;
    for(let person of people){
      person.el.style.left = parseInt(person.x) + "px";
-	 person.el.style.top = parseInt(person.x) + "px";
+	 person.el.style.top = parseInt(person.y) + "px";
+	 if (person.exposedAt > 0 && tick > person.exposedAt + recoveryTime) {
+	   person.el.classList.remove('sick');
+	   person.el.classList.add('recovered');
+	 }
+	 else if (person.exposedAt > 0) {
+	   person.el.classList.add('sick');
+	  }
+	  if (person.exposedAt > 0 && tick <= person.exposedAt + recoveryTime) {
+	   activeCases++;
+	  }
   }
+  let column = document.createElement("div");
+  column.className = "column";
+  column.style.left = tick+"px";
+  column.style.height= activeCases+"px";
+  column.style.top = (worldSize + nPeople - activeCases + 10)+"px";
+  document.body.appendChild(column);
 }
+function movePeople(){
+  tick++;
+  for (let person of people) { 
+    person.x += person.speedX;
+	person.y += person.speedY;
+	if (person.x < 0) {
+	  person.x = 0;
+	  person.speedX= -person.speedX;
+	 }
+	 if (person.y < 0) {
+	  person.y = 0;
+	  person.speedY= -person.speedY;
+	 }
+	 if (person.x > worldSize) {
+	  person.x = worldSize;
+	  person.speedX= -person.speedX;
+	 }
+	 if (person.y > worldSize) {
+	  person.y = worldSize;
+	  person.speedY= -person.speedY;
+	 }
+	 if (person.exposedAt > 0 && tick <= person.exposedAt + recoveryTime)
+	 for (let person2 of people) {
+	   if (person2.exposedAt === 0) {
+	     let distance = Math.sqrt ((person.x - person2.x) ** 2 + 
+		   (person.y- person2.y) ** 2);
+		  if (distance <= infectionRadius) {
+		  person2.exposedAt = tick;
+	  	
+		 }
+		 }
+		 }
+		 }
+		 }
+		 
 
 createWorld();
-drawWorld();
+people[nPeople - 1].exposedAt = 1;
 
-
+setInterval(function() {
+  movePeople();
+  drawWorld();
+}, 100);
 
 
 </script>

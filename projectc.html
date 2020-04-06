@@ -1,4 +1,5 @@
 <script>
+let rand=(math.Floor
 let score= {"at":1, "with":-2, "on":3, "in":4, "over":0}
 let worst="at";
 for (let k in score){
@@ -6,7 +7,48 @@ if (score[k]<score[worst]){
 worst=k;
 }
 }
-const prep= {"at":[
+const Prep= {"at":[
+  "I am ____ school.",
+  "Where are you ____?",
+  "____ what time are we meeting?",
+  "Look ____ me!",
+  "It is located ____ the corner of first and fifth street"
+  
+],
+ "with":[
+  "I am cleaning ____ a broom.",
+  "I am ____ your sister.",
+  "Who are you going ____?",
+  "What do you like ____ your coffee?",
+  "I like fries ____ my burger."  
+  
+], 
+  "on":[
+  "The cat is ____ the couch.",
+  "She is sitting ____ the chair.",
+  "Let's move ____ to the next problem.",
+  "The book is ____ my desk.",
+  "I put the flowers ____ the counter."
+ 
+], 
+  "in": [
+  "The whisk is ____ the drawer.",
+  "The mail is ____ the mailbox.",
+  "I am disappointed ____ you.",
+  "I am ____ my car",
+  "She is ____ her office" 
+  
+],
+  "over":[
+  "The plane flew ____ New York.",
+  "The ball went ____ his hands.",
+  "The question went ____ my head.",
+  "The shelf is ____ the desk",
+  "She put the sweatshirt ____ her tshirt."
+  ]
+
+}
+const correctPrep= {"at":[
   "I am at school.",
   "Where are you at?",
   "At what time are we meeting?",
@@ -47,9 +89,8 @@ const prep= {"at":[
   ]
 
 }
-let sentence=""
-for (let x in prep){
- alert(prep[Math.floor(Math.random() * 6)]);  
+while (true){
+  answer=prompt(sentences[worst][rand
   }
 
 
