@@ -1,12 +1,5 @@
 <script>
-let rand=(Math.floor(Math.random()*25))
-let score= {"at":1, "with":-2, "on":3, "in":4, "over":0}
-let worst="at";
-for (let k in score){
-if (score[k]<score[worst]){
-worst=k;
-}
-}
+
 const Prep= {"at":[
   "I am ____ school.",
   "Where are you ____?",
@@ -90,14 +83,24 @@ const correctPrep= {"at":[
 
 }
 while (true){
-  answer=prompt(sentences[worst][rand]);
+let rand=(Math.floor(Math.random()*5))
+let score= {"at":0, "with":0, "on":0, "in":0, "over":0}
+let worst="at";
+
+  answer=prompt(Prep[worst][rand]);
   if (answer==worst){
-    alert(Correct!);
+    alert("Correct!");
 	score[worst]=score[worst]+1
 	}
 	else{
 	alert(correctPrep[worst][rand]);
 	Prep[smallest]=correctPrep[worst]-1
+	for (let k in Prep){
+if (score[k]<score[worst]){
+worst=k;
+}
+}
+  }
   }
 
 

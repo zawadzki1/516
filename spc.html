@@ -1,0 +1,56 @@
+<script>
+
+const sentences={
+by: ["You can turn on the radio ____ pressing that button.", "They came _____car.", "The kitchen is being cleaned _______ David.", "Can I pay _______ credit card?", "My parents often go to France ______ train."],
+on:["He was born ____ September 24th.", "I go to the gym ______ Mondays and Wednesdays.", "The papers are _____ the coffee table.", "I left the keys ______ the counter.", "My books were ___ this desk, where did they go?"],
+at:["I will see you ____ 8:00 pm.", "My interview is ___ 3:00 pm.", "We are meeting ___ the cafe.", "The football game is ___ the stadium.", "We will meet ___ 5:00 pm."],
+since:["I have lived in this house ________ 1997.", "We’ve been married _______ last June.", "I've known him _________ we were at school.", "I have had this car _______ last April.", "Mary has been working here ________ 2003."],
+to:["I am going to send an email _____ Jane.", "We are going ____ London next week.", "I am going to talk ___ you in a few minutes", "Can you send your phone number ____ Alison?", "It was the first train ____ Paris but I missed it."]
+};
+
+
+const correctsentences={
+by: ["You can turn on the radio by pressing that button.", "They came by car.", "The kitchen is being cleaned by David.", "Can I pay by credit card?", "My parents often go to France by train."],
+on:["He was born on September 24th.", "I go to the gym on Mondays and Wednesdays.", "The papers are on the coffee table.", "I left the keys on the counter.", "My books were on this desk, where did they go?"],
+at:["I will see you at 8:00 pm.", "My interview is at 3:00 pm.", "We are meeting at the cafe.", "The football game is at the stadium.", "We will meet at 5:00 pm."],
+since:["I have lived in this house since 1997.", "We’ve been married since last June.", "I've known him since we were at school.", "I have had this car since last April.", "Mary has been working here since 2003."],
+to:["I am going to send an email to Jane.", "We are going to London next week.", "I am going to talk to you in a few minutes", "Can you send your phone number to Alison?", "It was the first train to Paris but I missed it."]
+}
+
+
+
+smallest = "by";
+let model = {by:0, on:0, at:0, since:0, to:0};
+randomnumber = 0;
+
+
+
+while (true) {
+
+answer=prompt(sentences[smallest][randomnumber]);
+
+
+if (answer == smallest) {
+  alert ("Correct!");
+  model[smallest]=model[smallest]+1;
+  }
+  //to keep track and increase the value of the smallest preposition in the model object
+else {
+  alert (correctsentences[smallest][randomnumber]);
+  model[smallest]=model[smallest]-1;
+  }
+
+//smallest is the preposition and the randomnumber is matching the sentences to the correct sentences when the learner has it wrong
+
+
+randomnumber= Math.floor(Math.random()*5);
+
+for (let current in model) {
+ 
+    if (model[smallest] > model[current]) {
+      smallest = current;
+    }
+  }
+
+}
+</script>
