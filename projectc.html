@@ -1,5 +1,5 @@
 <script>
-let rand=(math.Floor
+let rand=(Math.floor(Math.random()*25))
 let score= {"at":1, "with":-2, "on":3, "in":4, "over":0}
 let worst="at";
 for (let k in score){
@@ -90,7 +90,14 @@ const correctPrep= {"at":[
 
 }
 while (true){
-  answer=prompt(sentences[worst][rand
+  answer=prompt(sentences[worst][rand]);
+  if (answer==worst){
+    alert(Correct!);
+	score[worst]=score[worst]+1
+	}
+	else{
+	alert(correctPrep[worst][rand]);
+	Prep[smallest]=correctPrep[worst]-1
   }
 
 
