@@ -28,15 +28,15 @@ const Prep= {"at":[
   "The whisk is ____ the drawer.",
   "The mail is ____ the mailbox.",
   "I am disappointed ____ you.",
-  "I am ____ my car",
-  "She is ____ her office" 
+  "I am ____ my ca.r",
+  "She is ____ her office." 
   
 ],
   "over":[
   "The plane flew ____ New York.",
   "The ball went ____ his hands.",
   "The question went ____ my head.",
-  "The shelf is ____ the desk",
+  "The shelf is ____ the desk.",
   "She put the sweatshirt ____ her tshirt."
   ]
 
@@ -69,15 +69,15 @@ const correctPrep= {"at":[
   "The whisk is in the drawer.",
   "The mail is in the mailbox.",
   "I am disappointed in you.",
-  "I am in my car",
-  "She is in her office" 
+  "I am in my car.",
+  "She is in her office." 
   
 ],
   "over":[
   "The plane flew over New York.",
   "The ball went over his hands.",
   "The question went over my head.",
-  "The shelf is over the desk",
+  "The shelf is over the desk.",
   "She put the sweatshirt over her tshirt."
   ]
 
@@ -94,11 +94,11 @@ while (true){
 	alert(correctPrep[worst][rand]);
 	score[worst]=score[worst]-1;
 	}
-	rand=Math.floor(Math.random()*5);
+rand=Math.floor(Math.random()*5);
 	for (let k in Prep){
       if (score[k]<score[worst]){
       worst=k;
-}
-}
+    }
+  }
 }
   </script>
