@@ -82,26 +82,23 @@ const correctPrep= {"at":[
   ]
 
 }
-while (true){
-let rand=(Math.floor(Math.random()*5))
-let score= {"at":0, "with":0, "on":0, "in":0, "over":0}
+let rand=0;
+let score= {"at":0, "with":0, "on":0, "in":0, "over":0};
 let worst="at";
-
+while (true){
   answer=prompt(Prep[worst][rand]);
   if (answer==worst){
     alert("Correct!");
 	score[worst]=score[worst]+1
-	}
-	else{
+} else{
 	alert(correctPrep[worst][rand]);
-	Prep[smallest]=correctPrep[worst]-1
+	score[worst]=score[worst]-1;
+	}
+	rand=Math.floor(Math.random()*5);
 	for (let k in Prep){
-if (score[k]<score[worst]){
-worst=k;
+      if (score[k]<score[worst]){
+      worst=k;
 }
 }
-  }
-  }
-
-
-</script>
+}
+  </script>
