@@ -3,6 +3,7 @@
 <p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
 
 <script>
+alert("Please copy and paste a text into the input box on the page")
 
 // this function will be invoked when the button is clicked
 function process() {
@@ -12,7 +13,9 @@ function process() {
   
   // do some processing
   // replace this line with what you need to do for the assignment
-  let y = x.toLowerCase();
+  let y = x.toUpperCase();
+  let y = /[,.?!;:]/gi,""/
+  let y= /\s{2,}," "/
 
   // populate the output text box with the value of the variable "y"
   document.getElementById("output").value = y;
