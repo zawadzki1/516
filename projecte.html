@@ -13,12 +13,12 @@ function process() {
   
   // do some processing
   // replace this line with what you need to do for the assignment
-  let y = x.toUpperCase();
-  let y = /[,.?!;:]/gi,""/
-  let y= /\s{2,}," "/
+  let a = x.toUpperCase();
+  let b =a.replace(/[,.?!;:]/gi,"");
+  let c=b.replace(/\s{2,}/gi," ");
 
   // populate the output text box with the value of the variable "y"
-  document.getElementById("output").value = y;
+  document.getElementById("output").value = c;
 }
 
 </script>
