@@ -16,9 +16,28 @@ function process() {
   let a = x.toUpperCase();
   let b =a.replace(/[,.?!;:]/gi,"");
   let c=b.replace(/\s{2,}/gi," ");
-
+let arrayofWords = c.split(" ")
+let types={};
+let tokens=arrayofWords.length;
+let count = 0;
+let Counts=[...newSet(NovArray)];
+for(let i=0;i<NovArray.length; i++){
+      if (NovArray[i] in Types){
+      Types[NovArray[i]]=Types[NovArray[i]]+1
+      }
+      else{
+      Types[NovArray[i]]=1  
+      }  
+     
+    }
+  trackTypes= ""
+  for (t in Types){
+   TrackTypes += t + ":" + Types[t] + "\n"
+    }
+    let ratio = (TypesCount.length/Tokens);
   // populate the output text box with the value of the variable "y"
-  document.getElementById("output").value = c;
+  document.getElementById("output").value = "Tokens:" + Tokens + "\n" + "Types:" + "\n" + DictionaryTypes + "\n" + "Ratio: " + ratio
+  }
 }
 
 </script>
