@@ -1,0 +1,70 @@
+<p>Input:<br><textarea id="input" rows="10" cols="80"></textarea>
+<p><button onclick="process()">Process</button>
+<p>Output:<br><textarea id="output" rows="10" cols="80"></textarea>
+
+<script>
+
+alert("Copy and paste a text into the edit box")
+
+// this function will be invoked when the button is clicked
+function process() {
+ 
+  // get input text, put it in the variable "x"
+  let x = document.getElementById("input").value;
+ 
+  x = x.replace(/([^A-Za-z]+)/g," ");
+  //takes care of extra white space and punctuation
+ 
+  let y = x.toUpperCase();
+  //changes into upper case and y is my new variable with clean data
+ 
+ 
+    let NovArray = y.split(" ");
+    //to turn a string into an array of elements
+ 
+   
+    let Tokens = NovArray.length;
+    let count = 0
+   
+   
+    let TypesCount = [...new Set(NovArray)];
+   
+    //counts unique value in order to get the number of Types https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
+   
+    let Types = {};
+     
+    for(let i=0;i<NovArray.length; i++){
+      if (NovArray[i] in Types){
+      Types[NovArray[i]]=Types[NovArray[i]]+1
+      }
+      else{
+      Types[NovArray[i]]=1  
+      }  
+     
+    }
+   
+   
+    DictionaryTypes = ""
+   
+   
+    for (t in Types) {
+       
+      DictionaryTypes += t + ":" + Types[t] + "\n"
+    }
+   
+    //for every single t in the object, do this
+  let ratio = (TypesCount.length/Tokens);
+ 
+    //count the number of tokens ***It is working but it gives one extra if I have .! or space!
+
+   
+  // populate the output text box with the value of the variable "y"
+  document.getElementById("output").value = "Tokens:" + Tokens + "\n" + "Types:" + "\n" + DictionaryTypes + "\n" + "Ratio: " + ratio
+  }
+      //if the KEY doesn't exist - then create one and assign valuae of zero
+     // Types[NovArray[i]] = 0;
+      //Types[NovArray[i]]++;  
+     
+
+ 
+</script>
