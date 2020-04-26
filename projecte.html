@@ -14,36 +14,37 @@ function process() {
   // do some processing
   // replace this line with what you need to do for the assignment
   let a = x.toUpperCase();
-  let b =a.replace(/[,.?!;:]/gi,"");
+  let b =a.replace(/[,.?!;:"]/gi,"");
   let c=b.replace(/\s{2,}/gi," ");
 let arrayofWords = c.split(" ")
-let types ={};
+
 let tokens=arrayofWords.length;
 let count = 0;
 let Counts=[...new Set(arrayofWords)];
+let types = {};
 for(let i=0;i<arrayofWords.length; i++){
       if (arrayofWords[i] in types){
-      types[arrayofWords[i]]=types[arrayofWords[i]]+1
+      types[arrayofWords[i]]=types[arrayofWords[i]]+1;
       }
       else{
-      types[arrayofWords[i]]=1  
+      types[arrayofWords[i]]=1; 
       }  
      
     }
-	
-}
-function compare(a,b){
+  trackTypes= ""; 
+  types.sort(compare);
+  function compare(a,b){
   var countA= Counts[a];
   var countB= Counts[b];
-  return countB - count A;
+  return countB - countA;
   }
-  trackTypes= ""
-  for (t in types){
-   trackTypes += t + ":" + types[t] + "\n"
+ for (t in types) {
+       
+      trackTypes += t + ":" + types[t] + "\n"
     }
     let ratio = (Counts.length/tokens);
-  // populate the output text box with the value of the variable "y"
-  document.getElementById("output").value = "tokens:" + tokens + "\n" + "types:" + "\n" + trackTypes + "\n" + "Ratio: " + ratio
+
+  document.getElementById("output").value = "tokens:" + tokens + "\n" + "types:" + "\n" + trackTypes + "\n" + "Ratio: " + ratio;
   }
 
 </script>
