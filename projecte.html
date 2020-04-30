@@ -29,9 +29,19 @@ for(let i=0;i<arrayofWords.length; i++){
       else{
       types[arrayofWords[i]]=1; 
       }  
-    }
-  trackTypes= ""; 
+ }
+trackTypes= ""; 
   
+let arrayofTypes = Object.keys(types);
+
+arrayofTypes.sort(function(a.b.) { return types[b] - types [a]; });
+  
+  types.sort(compare);
+  function compare(a,b){
+  var countA= Counts[a];
+  var countB= Counts[b];
+  return countB - countA;
+  }
  for (t in types) {
       trackTypes += t + ":" + types[t] + "\n"
     }
